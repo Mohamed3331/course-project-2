@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import { handleAddAnswer } from "../actions/questions";
 import { formatDate } from "../utils/helpers";
 import Avatar from "./Avatar";
+import PageNotFound from '../components/Page404'
 
 class UnansweredQuestion extends Component {
   state = {
@@ -27,6 +28,10 @@ class UnansweredQuestion extends Component {
 
   render() {
     const { question, author } = this.props;
+
+    if (question === null) {
+			return <PageNotFound />;
+		}
 
     const { optionOne, optionTwo, timestamp, id } = question;
     const { name, avatarURL } = author;

@@ -7,6 +7,7 @@ import Home from './Home';
 import NewQuestion from './NewQuestion';
 import QuestionPage from './QuestionPage';
 import LeaderBoard from './LeaderBoard';
+import PageNotFound from '../components/Page404' 
 
 class PrivateApp extends Component {
 	render() {
@@ -20,6 +21,7 @@ class PrivateApp extends Component {
 							<Route path="/questions/:id" component={QuestionPage} />
 							<Route path="/add" component={NewQuestion} />
 							<Route path="/leaderboard" component={LeaderBoard} />
+							<Route component={PageNotFound} />
 						</Switch>
 					</main>
 				</Container>

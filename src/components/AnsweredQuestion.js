@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import { formatDate } from '../utils/helpers';
+import PageNotFound from '../components/Page404'
 import Avatar from './Avatar';
 
 class AnsweredQuestion extends Component {
@@ -16,6 +17,11 @@ class AnsweredQuestion extends Component {
 		const totalVotes = optionOne.votes.length + optionTwo.votes.length;
 		const optionOnePercent = Math.round((optionOne.votes.length / totalVotes) * 100);
 		const optionTwoPercent = Math.round((optionTwo.votes.length / totalVotes) * 100);
+
+		
+	if (question === null) {
+		return <PageNotFound />;
+	}
 
 		return (
 			<Row className="justify-content-center">
